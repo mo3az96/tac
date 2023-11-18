@@ -1,0 +1,91 @@
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: $main;
+  margin: 0 0 40px;
+  @include sm {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+}
+.main-section {
+  padding-bottom: 35px;
+  @include sm {
+    padding-bottom: 25px;
+  }
+}
+.services-section {
+  background-color: #fff;
+  width: 100%;
+  overflow: hidden;
+  padding: 35px 0;
+  .section-title {
+    margin-bottom: 35px;
+    @include sm {
+      margin-bottom: 25px;
+    }
+  }
+  @include sm {
+    padding: 25px 0;
+  }
+}
+.categories-section {
+  background-color: #fff;
+  width: 100%;
+  overflow: hidden;
+  padding: 35px 0 70px;
+  @include sm {
+    padding: 25px 0 50px;
+  }
+}
+.products-section {
+  background: linear-gradient(180deg, #f4f4f4 0%, #ffffff 100%);
+  width: 100%;
+  overflow: hidden;
+  padding: 60px 0 77px;
+  @include sm {
+    padding: 40px 0 55px;
+  }
+  .section-title {
+    text-align: start;
+  }
+}
+
+.banner-section {
+  width: 100%;
+  overflow: hidden;
+}
+.banner {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 70px solid rgba(255, 255, 255, 0);
+    top: 0;
+    right: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.02);
+    }
+
+    &::before {
+      border: 0 solid rgba(255, 255, 255, 0.7);
+    }
+  }
+}

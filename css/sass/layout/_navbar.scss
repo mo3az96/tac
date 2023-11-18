@@ -1,0 +1,96 @@
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  gap: 40px;
+  @include md {
+    gap: 25px;
+  }
+  a {
+    font-size: 16px;
+    font-weight: 600;
+    color: $main;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: $sec;
+      text-decoration: none;
+    }
+    &::after {
+      width: 25px;
+      height: 4px;
+      border-radius: 8px;
+      background-color: #edd81c;
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.active {
+      font-weight: 700;
+      &::after {
+        content: "";
+      }
+    }
+  }
+}
+.close-menu {
+  position: absolute;
+  top: 25px;
+  inset-inline-end: 25px;
+  fill: #727272;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: fill 0.3s ease-in-out;
+  &:hover {
+    fill: $main;
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 98;
+  background-color: #000;
+  opacity: 0.9;
+  display: none;
+}
+@include sm {
+  .header-nav {
+    position: fixed;
+    top: 0;
+    inset-inline-start: -300px;
+    // inset-inline-start: -0px;
+    bottom: 0;
+    background-color: #fff;
+    border: none;
+    z-index: 99;
+    width: 300px;
+    max-width: 90%;
+    overflow-y: auto;
+    height: auto;
+    transition: all 0.5s ease-in-out;
+    &.active {
+      inset-inline-start: 0;
+    }
+  }
+  .nav-list {
+    padding: 60px 20px 40px;
+    display: block;
+    li {
+      padding: 10px 0;
+    }
+    a {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .close-menu {
+    display: flex;
+  }
+}

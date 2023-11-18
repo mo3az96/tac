@@ -1,0 +1,27 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+* {
+  outline: none !important;
+}
+select {
+  background-image: url(../images/icons/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  @include rtl {
+    background-position: left 23px top 50%;
+  }
+  @include ltr {
+    background-position: right 23px top 50%;
+  }
+}

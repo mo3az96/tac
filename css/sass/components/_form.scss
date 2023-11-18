@@ -1,0 +1,122 @@
+.form-group {
+  margin-bottom: 30px;
+}
+.custom-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: $text;
+  margin-bottom: 20px;
+}
+.input-icon {
+  position: relative;
+  .icon {
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    stroke: $text;
+    position: absolute;
+    top: 0;
+    inset-inline-start: 29px;
+    transition: 0.3s ease-in-out;
+    transition-property: stroke, fill;
+  }
+}
+.custom-input {
+  width: 100%;
+  height: 52px;
+  border-radius: $radius;
+  border: 1px solid #cfcfcf;
+  background-color: transparent;
+  color: $text;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 15px;
+  transition: border-color 0.3s ease-in-out;
+
+  &::placeholder {
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  &:focus {
+    border-color: $main;
+    ~ .icon {
+      fill: $main;
+      stroke: $main;
+    }
+  }
+  &:is(textarea) {
+    padding: 23px 15px;
+    border-radius: 10px;
+    height: 210px;
+    resize: none;
+  }
+  &:is(select) {
+    option {
+      &:first-of-type {
+        color: red;
+      }
+    }
+  }
+  .input-icon & {
+    @include rtl {
+      padding-right: 59px;
+      padding-left: 15px;
+    }
+    @include ltr {
+      padding-right: 15px;
+      padding-left: 59px;
+    }
+  }
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 17px;
+  @include md {
+    grid-template-columns: 1fr;
+  }
+}
+.contact-submit {
+  width: 210px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: $main;
+  border-radius: $radius;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+  &:hover,
+  &:focus {
+    background-color: $sec;
+  }
+  @include sm {
+    margin: auto;
+  }
+}
+.form-submit {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: $main;
+  border-radius: $radius;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+  &:hover,
+  &:focus {
+    background-color: $sec;
+  }
+  @include sm {
+    margin: auto;
+  }
+}

@@ -1,0 +1,98 @@
+body {
+  position: relative;
+  font-family: cairo;
+  font-weight: normal;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $main #fff;
+  ::-webkit-scrollbar {
+    background-color: #fff;
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $main;
+  }
+}
+
+.overflow {
+  overflow: hidden !important;
+}
+
+.container {
+  @include lg {
+    width: 1200px;
+  }
+}
+
+.custom-slider {
+  .swiper-pagination {
+    position: relative;
+    inset: unset;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    margin-top: 25px;
+    @include sm {
+      display: flex;
+      gap: 5px;
+    }
+    .swiper-pagination-bullet {
+      margin: 0;
+      width: 26px;
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: rgba(var(--primary-color-rgb), 0);
+      opacity: 0.5;
+      transition: 0.3s ease-in-out;
+      transition-property: background-color, opacity;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include sm {
+        width: 13px;
+      }
+      &::after {
+        content: "";
+        width: 16px;
+        height: auto;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: #000;
+        transition: background-color 0.3s ease-in-out;
+        @include sm {
+          width: 8px;
+        }
+      }
+      &:hover {
+        opacity: 1;
+      }
+      &.swiper-pagination-bullet-active {
+        background-color: $main;
+        opacity: 1;
+        &::after {
+          background-color: $main;
+        }
+      }
+    }
+  }
+}
+
+.fa-facebook:before {
+  content: "\f39e";
+}
+.fa-snapchat:before {
+  content: "\f2ac";
+}
+.fa-linkedin:before {
+  content: "\f0e1";
+}
+
+.page-content{
+  padding: 70px 0 100px;
+  min-height: 700px;
+}

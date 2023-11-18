@@ -1,0 +1,23 @@
+@import "sass/helpers/variables";
+@import "sass/helpers/mixins";
+
+@import "sass/base/reset";
+@import "sass/base/typography";
+@import "sass/base/base";
+
+@import "sass/components/hero";
+@import "sass/components/service";
+@import "sass/components/categories";
+@import "sass/components/products";
+@import "sass/components/modal";
+@import "sass/components/form";
+
+@import "sass/layout/header";
+@import "sass/layout/navbar";
+@import "sass/layout/breadcrumb";
+@import "sass/pages/home";
+@import "sass/pages/about";
+@import "sass/layout/footer";
+
+
+

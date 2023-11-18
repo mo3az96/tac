@@ -1,0 +1,17 @@
+.modal-dialog {
+  @include lg {
+    width: 705px;
+  }
+}
+.modal-content {
+  box-shadow: none;
+  border: none;
+  border-radius: 20px;
+}
+
+.servcie-form {
+  padding: 48px 46px;
+  @include md {
+    padding: 35px 20px;
+  }
+}

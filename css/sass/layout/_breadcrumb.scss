@@ -1,0 +1,67 @@
+.breadcrumb-section {
+  background: linear-gradient(89.93deg, #e3f0fa 0.07%, #cde9ff 99.95%);
+  position: relative;
+  .pattern {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: auto;
+    inset-inline-end: 0;
+  }
+}
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  padding: 40px 0 0;
+  margin: 0;
+  @include xs {
+    display: none;
+  }
+  li {
+    font-size: 16px;
+    font-weight: 500;
+    color: #7fa0ba;
+    ~ li {
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f104";
+        margin: 0 10px;
+        @include ltr {
+          content: "\f105";
+        }
+      }
+    }
+    &:last-of-type {
+      a {
+        color: $main;
+        pointer-events: none;
+      }
+    }
+  }
+  a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #7fa0ba;
+    transition: color 0.3s ease-in-out;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $main;
+    }
+  }
+}
+.breadcrumb-title {
+  margin: 56px 0 107px;
+  text-align: center;
+  font-size: 52px;
+  font-weight: 700;
+  color: $main;
+  position: relative;
+  z-index: 2;
+  @include xs {
+    font-size: 36px;
+    margin: 25px 0;
+  }
+}
